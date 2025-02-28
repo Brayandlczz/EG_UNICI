@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh; 
+    flex-direction: row; 
+}
+
+.main-content {
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-left: 70px; 
+}
+
+#sidebar {
+    width: 70px;
+    min-width: 70px;
+    background: #0e2238;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#sidebar.expand {
+    width: 260px;
+    min-width: 260px;
+}
+
+.toggle-area {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.sidebar-logo a {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: none;
+}
+
+#sidebar.expand .sidebar-logo a {
+    display: block;
+}
+
+.sidebar-nav {
+    padding: 0;
+    flex-grow: 1;
+}
+
+.sidebar-item {
+    list-style: none;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    border-left: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.sidebar-link i {
+    font-size: 1.3rem;
+    margin-right: 15px;
+}
+
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #ff6b6b;
+}
+
+#sidebar.expand .sidebar-link span {
+    display: inline;
+}
+
+.sidebar-dropdown {
+    padding-left: 20px;
+}
+
+#sidebar:not(.expand) .sidebar-dropdown {
+    display: none;
+}
+
+#sidebar.expand + .main-content {
+    margin-left: 260px; 
+}
+
+#sidebar:not(.expand) .sidebar-link span {
+    display: none;
+}
+
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.sidebar-logo img.logo-img {
+    width: 100px;
+    height: auto;
+}
+
+footer {
+    background-color: #0e2238; 
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-content {
+    padding-bottom: 50px; 
+}
+
+/* Estilo botón de logout */
+.sidebar-link.logout {
+    background: none; /* color de fondo predeterminado */
+    color: white; /* color del texto */
+    border-left: 3px solid transparent; /* sin borde cuando no esté activo */
+}
+
+.sidebar-link.logout:hover {
+    background: rgba(255, 255, 255, 0.1); /* Efecto hover  */
+    border-left: 3px solid #ff6b6b; /* color de borde en hover */
+}
+
+/* Si el botón de logout está activo */
+.sidebar-link.logout.active {
+    background: none;
+    color: white;
+    border-left: 3px solid transparent; /* no bordes o color de fondo activos */
+}
+

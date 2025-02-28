@@ -1,0 +1,51 @@
+body {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: rgb(216, 105, 8);
+    color: white;
+    padding: 15px;
+    position: fixed;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sidebar a:hover {
+    background: #042c44;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+    width: 100%;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.container {
+    max-width: 1200px;
+}
+.card-header {
+    font-size: 18px;
+}
+
+.sidebar-custom {
+    background-color: #f2770d;
+}
+
